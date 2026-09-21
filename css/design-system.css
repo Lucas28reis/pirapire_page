@@ -1,0 +1,287 @@
+/* ==========================================================================
+   PIRAPIRE TAXTECH - DESIGN SYSTEM TOKENS & FOUNDATIONS
+   ========================================================================== */
+
+:root {
+  /* Brand Primary: Emerald Green (Aprovação, Dinheiro, Compliance) */
+  --color-primary: #006B3F;
+  --color-primary-dark: #004D2D;
+  --color-primary-light: #008751;
+  --color-primary-surface: #E8F5EE;
+  --color-primary-subtle: #F0F9F4;
+  --color-primary-glow: rgba(0, 107, 63, 0.15);
+
+  /* Brand Secondary: Gold Yellow (Destaques e Valor) */
+  --color-gold: #FDB913;
+  --color-gold-dark: #D89803;
+  --color-gold-light: #FFD25E;
+  --color-gold-surface: #FFF9E6;
+
+  /* Conversion CTA: Vibrant Orange (Urgência e Foco em Ação) */
+  --color-cta: #FF6B35;
+  --color-cta-hover: #E8551E;
+  --color-cta-active: #D1420C;
+  --color-cta-glow: rgba(255, 107, 53, 0.28);
+  --color-cta-surface: #FFF2ED;
+
+  /* Neutral Backgrounds & Surfaces */
+  --bg-main: #F8F9FA;          /* Off-white / Creme claro */
+  --bg-subtle: #F1F4F2;        /* Seção cinza/verde suave para contraste */
+  --bg-card: #FFFFFF;          /* Cards em branco puro */
+  --bg-card-hover: #FCFDFD;
+  --bg-dark: #0F172A;          /* Seção escura / Footer */
+  --bg-dark-card: #1E293B;
+
+  /* Typography Colors */
+  --text-main: #111827;         /* Títulos e leitura principal */
+  --text-body: #374151;         /* Parágrafos e descrições */
+  --text-muted: #6B7280;        /* Informações secundárias */
+  --text-light: #9CA3AF;        /* Legendas e marcas d'água */
+  --text-inverse: #FFFFFF;      /* Textos sobre fundos escuros */
+
+  /* Semantic Alerts */
+  --color-danger: #EF4444;
+  --color-danger-bg: #FEF2F2;
+  --color-danger-border: #FCA5A5;
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-border: #FCD34D;
+  --color-success: #10B981;
+  --color-success-bg: #ECFDF5;
+  --color-info: #3B82F6;
+  --color-info-bg: #EFF6FF;
+
+  /* Borders & Dividers */
+  --border-subtle: #E5E7EB;
+  --border-light: #F3F4F6;
+  --border-strong: #D1D5DB;
+  --border-primary: rgba(0, 107, 63, 0.2);
+
+  /* Shadows (Cloud Tech Soft Elevation) */
+  --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 2px 4px -1px rgba(16, 24, 40, 0.06), 0 1px 2px -1px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 8px 16px -4px rgba(16, 24, 40, 0.07), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-lg: 0 16px 28px -6px rgba(16, 24, 40, 0.08), 0 6px 12px -3px rgba(16, 24, 40, 0.03);
+  --shadow-xl: 0 24px 44px -8px rgba(16, 24, 40, 0.12), 0 10px 18px -4px rgba(16, 24, 40, 0.04);
+  --shadow-cta: 0 8px 24px -4px rgba(255, 107, 53, 0.35);
+  --shadow-primary: 0 8px 24px -4px rgba(0, 107, 63, 0.25);
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Typography Families */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout Spacing */
+  --container-max: 1240px;
+  --header-height: 80px;
+  --header-height-mobile: 68px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-padding {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 56px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: var(--color-primary-surface);
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 107, 63, 0.12);
+}
+
+.section-tag.tag-warning {
+  background-color: var(--color-danger-bg);
+  color: #B91C1C;
+  border-color: rgba(185, 28, 28, 0.15);
+}
+
+.section-tag.tag-gold {
+  background-color: var(--color-gold-surface);
+  color: #9A6500;
+  border-color: rgba(216, 152, 3, 0.2);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--text-main);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-body);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Buttons Component Framework */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-cta {
+  background-color: var(--color-cta);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-cta);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-cta:hover {
+  background-color: var(--color-cta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(255, 107, 53, 0.45);
+}
+
+.btn-cta:active {
+  background-color: var(--color-cta-active);
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 107, 63, 0.35);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  background-color: #F9FAFB;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 18px 36px;
+  font-size: 1.125rem;
+}

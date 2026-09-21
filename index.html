@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pirapire | Auditoria Tributária Inteligente e Recuperação de Créditos Fiscais</title>
+  <meta name="description" content="A Pirapire cruza em tempo real notas fiscais (NF-e e NFS-e), regras de apuração e a legislação vigente para identificar créditos de PIS/COFINS e ICMS dos últimos 5 anos.">
+  <meta name="keywords" content="Pirapire, TaxTech, recuperação tributária, auditoria fiscal, PIS COFINS, ICMS, NF-e, NFS-e, split payment, reforma tributária">
+  <meta name="author" content="Pirapire TaxTech">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pirapire | O seu dinheiro de volta, sem burocracia.">
+  <meta property="og:description" content="Auditoria contínua e recuperação de créditos de PIS/COFINS e ICMS em minutos com blindagem contra a Receita Federal.">
+  <meta property="og:image" content="assets/logo.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER / NAVEGAÇÃO STICKY
+       ======================================================================== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <div class="header-left-group">
+        <a href="#inicio" class="logo-container" aria-label="Página inicial Pirapire">
+          <img src="assets/logo.svg" alt="Pirapire TaxTech Logo" width="170" height="40">
+        </a>
+        <span class="header-compliance-badge">
+          <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+          100% Conforme RFB
+        </span>
+      </div>
+
+      <nav class="nav-desktop" aria-label="Navegação Principal">
+        <a href="#metodologia" class="nav-link">Como Funciona</a>
+        <a href="#simulador" class="nav-link">Simulador de Caixa</a>
+        <a href="#segmentos" class="nav-link">Para Quem É</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#simulador" class="btn btn-cta btn-sm" data-open-modal id="btn-header-cta">
+          Simular Recuperação
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </a>
+        <button class="nav-toggle-btn" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Menu móvel">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="assets/logo.svg" alt="Pirapire Logo" style="height: 34px;">
+        <button class="mobile-nav-close" aria-label="Fechar menu" style="cursor: pointer; padding: 4px;">
+          <i data-lucide="x" style="width: 24px; height: 24px; color: #111827;"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#metodologia" class="nav-link">Como Funciona</a>
+        <a href="#simulador" class="nav-link">Simulador de Caixa</a>
+        <a href="#escopo" class="nav-link">Escopo &amp; Regras</a>
+        <a href="#matriz-risco" class="nav-link">Matriz de Risco</a>
+        <a href="#segmentos" class="nav-link">Para Quem É</a>
+      </div>
+    </div>
+    <div>
+      <a href="#simulador" class="btn btn-cta btn-lg" style="width: 100%;" data-open-modal>
+        Simular Recuperação
+      </a>
+      <p style="font-size: 0.75rem; color: #6B7280; text-align: center; margin-top: 12px;">
+        Pirapire: "dinheiro / moeda" em Guarani.
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ======================================================================
+         DOBRA 1: HERO SECTION (O que fazemos)
+         ====================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-glow-bg"></div>
+      <div class="container hero-grid">
+        <!-- Text Column -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            TaxTech Especializada em Auditoria e Recuperação
+          </div>
+
+          <h1 class="hero-title">
+            O seu dinheiro de volta, <span class="highlight-green">sem burocracia.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            A Pirapire cruza em tempo real notas fiscais (NF-e e NFS-e), regras de apuração e a legislação tributária vigente para identificar créditos de PIS/COFINS e ICMS.
+          </p>
+
+          <div class="hero-cta-group">
+            <div class="hero-cta-buttons">
+              <a href="#simulador" class="btn btn-cta btn-lg" id="btn-hero-recover" data-open-modal>
+                Descubra quanto você tem a recuperar
+                <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
+              </a>
+              <a href="#simulador" class="btn btn-secondary btn-lg">
+                Simulador Rápido
+                <i data-lucide="calculator" style="width: 18px; height: 18px;"></i>
+              </a>
+            </div>
+            <div class="risk-zero-reassurance">
+              <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+              <span><strong>Risco Zero:</strong> Cobrança exclusiva no êxito (Success Fee). Sem créditos = Custo R$ 0,00.</span>
+            </div>
+          </div>
+
+          <div class="hero-trust-badges">
+            <div class="trust-item">
+              <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+              <span>Auditoria Retroativa de 5 Anos</span>
+            </div>
+            <div class="trust-item">
+              <i data-lucide="zap" style="width: 20px; height: 20px;"></i>
+              <span>De Meses para Minutos</span>
+            </div>
+            <div class="trust-item">
+              <i data-lucide="scale" style="width: 20px; height: 20px;"></i>
+              <span>Blindagem Ativa contra Autuações</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Column: Live Audit Dashboard Widget -->
+        <div class="hero-visual-card" aria-label="Demonstração da plataforma Pirapire">
+          <div class="card-topbar">
+            <div class="window-dots">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="live-indicator">
+              <span class="pulse"></span>
+              AUDITORIA ATIVA EM TEMPO REAL
+            </div>
+          </div>
+
+          <div class="card-main-content">
+            <!-- Metrics Row -->
+            <div class="audit-metrics-row">
+              <div class="metric-box metric-highlight">
+                <div class="metric-label">
+                  <i data-lucide="trending-up" style="width: 14px; height: 14px; color: #006B3F;"></i>
+                  Créditos Recuperáveis
+                </div>
+                <div class="metric-value text-emerald" id="hero-live-counter">R$ 548.910,40</div>
+                <div class="metric-sub">PIS/COFINS &amp; ICMS auditados</div>
+              </div>
+
+              <div class="metric-box metric-shield">
+                <div class="metric-label">
+                  <i data-lucide="shield-alert" style="width: 14px; height: 14px; color: #D97706;"></i>
+                  Blindagem Preventiva
+                </div>
+                <div class="metric-value">46 Glosas</div>
+                <div class="metric-sub">Créditos indevidos barrados</div>
+              </div>
+            </div>
+
+            <!-- Ingestion Feed Simulation -->
+            <div class="feed-header">
+              <span>Fluxo de Ingestão de Arquivos XML</span>
+              <span style="color: #006B3F; font-size: 0.75rem;">SEFAZ &amp; ERP Conectados</span>
+            </div>
+
+            <div class="feed-list">
+              <div class="feed-item">
+                <div class="feed-left">
+                  <span class="feed-badge badge-nfe">NF-e Mercadoria</span>
+                  <span class="feed-title">Insumo Produtivo #9240 - PIS/COFINS</span>
+                </div>
+                <div class="feed-status status-approved">+ R$ 6.340,80</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-left">
+                  <span class="feed-badge badge-nfse">NFS-e Serviço</span>
+                  <span class="feed-title">Tomada de TI #812 - Retenção CSRF</span>
+                </div>
+                <div class="feed-status status-approved">+ R$ 2.150,00</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-left">
+                  <span class="feed-badge badge-ativo">Ativo Imobilizado</span>
+                  <span class="feed-title">Equipamento Industrial CIAP - 1/48</span>
+                </div>
+                <div class="feed-status status-approved">+ R$ 4.790,30</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-left">
+                  <span class="feed-badge badge-nfe">NF-e Mercadoria</span>
+                  <span class="feed-title">CFOP 5102 - Glosa de Risco Preventivo</span>
+                </div>
+                <div class="feed-status status-glosa">Risco Bloqueado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         BARRA DE PROVA SOCIAL & AUTORIDADE (TRUST STRIP)
+         ====================================================================== -->
+    <section class="trust-strip-bar">
+      <div class="container trust-strip-grid">
+        <div class="trust-strip-card">
+          <div class="trust-strip-icon"><i data-lucide="zap" style="width: 18px; height: 18px;"></i></div>
+          <div class="trust-strip-text">Auditoria em Minutos<span>100% dos XMLs dos últimos 5 anos</span></div>
+        </div>
+        <div class="trust-strip-card">
+          <div class="trust-strip-icon"><i data-lucide="shield-alert" style="width: 18px; height: 18px;"></i></div>
+          <div class="trust-strip-text">Blindagem Ativa<span>Glosas automáticas antes da autuação</span></div>
+        </div>
+        <div class="trust-strip-card">
+          <div class="trust-strip-icon"><i data-lucide="award" style="width: 18px; height: 18px;"></i></div>
+          <div class="trust-strip-text">Modelo Success Fee<span>Só cobramos sobre o dinheiro recuperado</span></div>
+        </div>
+        <div class="trust-strip-card">
+          <div class="trust-strip-icon"><i data-lucide="lock" style="width: 18px; height: 18px;"></i></div>
+          <div class="trust-strip-text">Segurança &amp; LGPD<span>Sigilo fiscal e integridade de dados</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DOBRA 2: A MATRIZ DE RISCO (Por que você precisa agir agora?)
+         ====================================================================== -->
+    <section class="section-padding risk-section" id="matriz-risco">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-warning">
+            <i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i>
+            O Custo da Inação
+          </span>
+          <h2 class="section-title">O que a sua empresa perde ao não auditar as notas?</h2>
+          <p class="section-subtitle">
+            Cada mês sem auditoria representa perda irreversível de capital de giro e exposição desnecessária ao fisco. Descubra os quatro grandes riscos de manter processos fiscais manuais:
+          </p>
+        </div>
+
+        <div class="risk-grid">
+          <!-- Risk 1 -->
+          <div class="risk-card">
+            <div class="risk-icon-wrapper">
+              <i data-lucide="hourglass" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="risk-tag">Janela de 5 Anos</span>
+            <h3 class="risk-card-title">Perda de Caixa</h3>
+            <p class="risk-card-desc">
+              Créditos tributários não sendo compensados mês a mês e risco de prescreverem na janela dos últimos 5 anos.
+            </p>
+            <div class="risk-impact-badge">
+              <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+              A cada 30 dias, 1 mês de crédito expira para sempre
+            </div>
+          </div>
+
+          <!-- Risk 2 -->
+          <div class="risk-card">
+            <div class="risk-icon-wrapper">
+              <i data-lucide="alert-octagon" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="risk-tag">Exposição Fiscal</span>
+            <h3 class="risk-card-title">Risco de Autuação</h3>
+            <p class="risk-card-desc">
+              Vulnerabilidade a autuações da Receita Federal por apurações incorretas ou créditos indevidos.
+            </p>
+            <div class="risk-impact-badge">
+              <i data-lucide="shield-x" style="width: 14px; height: 14px;"></i>
+              Multas punitivas de 75% a 150% do valor glosado
+            </div>
+          </div>
+
+          <!-- Risk 3 -->
+          <div class="risk-card">
+            <div class="risk-icon-wrapper">
+              <i data-lucide="gauge-circle" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="risk-tag">Gargalo Operacional</span>
+            <h3 class="risk-card-title">Baixa Produtividade</h3>
+            <p class="risk-card-desc">
+              Equipes presas em auditorias manuais lentas e ineficientes.
+            </p>
+            <div class="risk-impact-badge">
+              <i data-lucide="file-spreadsheet" style="width: 14px; height: 14px;"></i>
+              Milhares de horas gastas em checagens por amostragem
+            </div>
+          </div>
+
+          <!-- Risk 4 -->
+          <div class="risk-card">
+            <div class="risk-icon-wrapper">
+              <i data-lucide="refresh-cw" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="risk-tag">Reforma Tributária</span>
+            <h3 class="risk-card-title">Despreparo para a Reforma</h3>
+            <p class="risk-card-desc">
+              Incapacidade de reagir às exigências operacionais do Split Payment.
+            </p>
+            <div class="risk-impact-badge">
+              <i data-lucide="cpu" style="width: 14px; height: 14px;"></i>
+              Retenção automática de tributos direto na liquidação financeira
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Matrix: Tradicional vs Pirapire -->
+        <div class="comparison-section" style="margin-bottom: 48px;">
+          <div class="comparison-card">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="col-feature">Critério de Análise</th>
+                  <th class="col-traditional">Auditoria Manual Tradicional</th>
+                  <th class="col-pirapire">Auditoria Inteligente Pirapire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Tempo de Processamento</strong></td>
+                  <td class="col-traditional">3 a 6 meses de trabalho manual moroso</td>
+                  <td class="col-pirapire"><i data-lucide="zap" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Menos de 15 minutos via automação de XMLs</td>
+                </tr>
+                <tr>
+                  <td><strong>Cobertura das Notas</strong></td>
+                  <td class="col-traditional">Apenas 5% a 10% checadas por amostragem</td>
+                  <td class="col-pirapire"><i data-lucide="check" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> 100% de entradas, saídas e tomadas de serviço</td>
+                </tr>
+                <tr>
+                  <td><strong>Prevenção de Riscos / Multas</strong></td>
+                  <td class="col-traditional">Passiva: erros e créditos indevidos passam despercebidos</td>
+                  <td class="col-pirapire"><i data-lucide="shield-check" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Blindagem Ativa: glosa automática antes de virar autuação</td>
+                </tr>
+                <tr>
+                  <td><strong>Modelo Financeiro</strong></td>
+                  <td class="col-traditional">Honorários fixos e custos antecipados de consultoria</td>
+                  <td class="col-pirapire"><i data-lucide="coins" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Risco Zero: remuneração exclusiva no êxito (Success Fee)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Inaction Takeaway Banner -->
+        <div class="inaction-banner">
+          <div class="inaction-content">
+            <div class="inaction-icon">
+              <i data-lucide="alert-circle" style="width: 24px; height: 24px;"></i>
+            </div>
+            <div>
+              <h3 class="inaction-title">Não agir hoje não significa "custo zero"</h3>
+              <p class="inaction-text">
+                Significa continuar <span class="inaction-highlight">perdendo créditos que prescrevem todos os meses</span> e assumir o risco diário de autuações que poderiam ser evitadas em minutos através de inteligência de dados.
+              </p>
+            </div>
+          </div>
+          <a href="#simulador" class="btn btn-cta" data-open-modal style="flex-shrink: 0;">
+            Estancar Perdas Agora
+            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DOBRA 3: ESCOPO DE AUDITORIA & REGRAS TRIBUTÁRIAS
+         ====================================================================== -->
+    <section class="section-padding scope-section" id="escopo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i data-lucide="check-circle-2" style="width: 14px; height: 14px;"></i>
+            Cobertura Especializada
+          </span>
+          <h2 class="section-title">Auditoria completa em 5 pilares fundamentais:</h2>
+          <p class="section-subtitle">
+            A tecnologia proprietária da Pirapire realiza um raio-X exaustivo de cada operação fiscal, garantindo compliance pleno e aproveitamento máximo de cada centavo.
+          </p>
+        </div>
+
+        <!-- 5 Pillars Grid -->
+        <div class="pillars-grid">
+          <!-- Pilar 01 -->
+          <div class="pillar-card">
+            <span class="pillar-number">Pilar 01</span>
+            <div class="pillar-icon-box">
+              <i data-lucide="boxes" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 class="pillar-name">Insumos</h3>
+            <p class="pillar-desc">
+              Créditos diretos e indiretos aplicados ao processo produtivo e prestação de serviços.
+            </p>
+          </div>
+
+          <!-- Pilar 02 -->
+          <div class="pillar-card">
+            <span class="pillar-number">Pilar 02</span>
+            <div class="pillar-icon-box">
+              <i data-lucide="truck" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 class="pillar-name">Ativo Imobilizado</h3>
+            <p class="pillar-desc">
+              Aproveitamento de créditos sobre aquisições de bens para o ativo permanente.
+            </p>
+          </div>
+
+          <!-- Pilar 03 -->
+          <div class="pillar-card">
+            <span class="pillar-number">Pilar 03</span>
+            <div class="pillar-icon-box">
+              <i data-lucide="landmark" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 class="pillar-name">Retenções na Fonte</h3>
+            <p class="pillar-desc">
+              Auditoria de valores retidos e não compensados devidamente.
+            </p>
+          </div>
+
+          <!-- Pilar 04 -->
+          <div class="pillar-card">
+            <span class="pillar-number">Pilar 04</span>
+            <div class="pillar-icon-box">
+              <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 class="pillar-name">NF-e de Mercadoria</h3>
+            <p class="pillar-desc">
+              Cruzamento de entradas e saídas de produtos e tributação aplicável.
+            </p>
+          </div>
+
+          <!-- Pilar 05 -->
+          <div class="pillar-card">
+            <span class="pillar-number">Pilar 05</span>
+            <div class="pillar-icon-box">
+              <i data-lucide="layers" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 class="pillar-name">NFS-e de Serviço</h3>
+            <p class="pillar-desc">
+              Análise detalhada de Tomada e Prestação de Serviços.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bloco de Regras de Regime Tributário -->
+        <div class="regime-block">
+          <div class="regime-header">
+            <span class="section-tag tag-gold">
+              <i data-lucide="scale" style="width: 14px; height: 14px;"></i>
+              Legislação &amp; Reforma Tributária
+            </span>
+            <h3 class="regime-title">Regras por Regime Tributário</h3>
+            <p class="regime-subtitle">
+              Entenda como as regras atuais de PIS/COFINS se aplicam à sua empresa e como preparamos sua operação para a transição tributária:
+            </p>
+          </div>
+
+          <!-- Progressive Disclosure Tabs -->
+          <div class="regime-tabs-nav">
+            <button type="button" class="regime-tab-button active" data-tab="real">
+              <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i>
+              Empresas no Lucro Real
+            </button>
+            <button type="button" class="regime-tab-button" data-tab="presumido">
+              <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
+              Empresas no Lucro Presumido
+            </button>
+          </div>
+
+          <div class="regime-tab-content">
+            <!-- Lucro Real Tab Pane (Default Active) -->
+            <div class="regime-tab-pane active" id="tab-pane-real">
+              <div class="regime-card card-real">
+                <span class="regime-tag tag-real">Lucro Real (Recuperação Plena Imediata)</span>
+                <h4 class="regime-card-title">Não-Cumulatividade Plena de PIS/COFINS (9,25%) e ICMS</h4>
+                <ul class="regime-rules-list">
+                  <li class="regime-rule-item rule-green">
+                    <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i>
+                    <span><strong>Recuperação Imediata:</strong> Recupera integralmente os créditos apurados de PIS/COFINS (alíquota geral de 9,25%) e ICMS sobre os últimos 5 anos de notas fiscais.</span>
+                  </li>
+                  <li class="regime-rule-item rule-green">
+                    <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i>
+                    <span><strong>A partir de 2027:</strong> Segue perfeitamente adaptado à alíquota vigente da transição da Reforma Tributária (CBS/IBS), com crédito financeiro irrestrito.</span>
+                  </li>
+                  <li class="regime-rule-item rule-green">
+                    <i data-lucide="shield-check" style="width: 18px; height: 18px;"></i>
+                    <span><strong>Blindagem Ativa:</strong> Glosa imediata de despesas indedutíveis para evitar multas punitivas de 75% a 150% pela Receita Federal.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Lucro Presumido Tab Pane -->
+            <div class="regime-tab-pane" id="tab-pane-presumido">
+              <div class="regime-card card-presumido">
+                <span class="regime-tag tag-presumido">Lucro Presumido (Retenções &amp; Transição 2027)</span>
+                <h4 class="regime-card-title">Regime Cumulativo &amp; Preparação para a Reforma Tributária</h4>
+                <ul class="regime-rules-list">
+                  <li class="regime-rule-item rule-amber">
+                    <i data-lucide="alert-circle" style="width: 18px; height: 18px;"></i>
+                    <span><strong>Até 2027:</strong> Empresas do Lucro Presumido não recuperam crédito de PIS/COFINS sobre insumos operacionais. O foco de recuperação imediata reside em retenções na fonte (CSRF/IRRF) não compensadas e segregação de ICMS-ST.</span>
+                  </li>
+                  <li class="regime-rule-item rule-amber">
+                    <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i>
+                    <span><strong>A partir de 2027:</strong> Passam a recuperar créditos com a alíquota vigente na apuração da transição da Reforma Tributária (CBS/IBS).</span>
+                  </li>
+                  <li class="regime-rule-item rule-amber">
+                    <i data-lucide="shield" style="width: 18px; height: 18px;"></i>
+                    <span><strong>Preparação Imediata:</strong> Mapeamento preventivo de fornecedores e saneamento de cadastros NCM/CFOP antes da virada fiscal.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DOBRA 4: NOSSA METODOLOGIA DE OPERAÇÃO
+         ====================================================================== -->
+    <section class="section-padding methodology-section" id="metodologia">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i data-lucide="git-merge" style="width: 14px; height: 14px;"></i>
+            Fluxo Tecnológico
+          </span>
+          <h2 class="section-title">Nossa Metodologia de Operação</h2>
+          <p class="section-subtitle">
+            Do envio dos seus arquivos XML à injeção direta de liquidez no caixa da empresa, em 4 etapas automatizadas e auditáveis sem sobrecarregar sua equipe:
+          </p>
+        </div>
+
+        <!-- 4 Step Cards -->
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-header-box">
+              <div class="step-number-badge">01</div>
+              <span class="step-verb">Extrair</span>
+            </div>
+            <h3 class="step-title">Captura Automática</h3>
+            <p class="step-desc">
+              <strong>Zero esforço interno:</strong> captura automática dos arquivos XML de NF-e e NFS-e dos últimos 5 anos via ERP ou upload simples. Redução do tempo de análise de meses para minutos.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-header-box">
+              <div class="step-number-badge">02</div>
+              <span class="step-verb">Cruzar</span>
+            </div>
+            <h3 class="step-title">Cruzamento Fiscal</h3>
+            <p class="step-desc">
+              Cruzamento detalhado entre NCM/CFOP e as regras de PIS/COFINS e ICMS específicas por ramo e atividade econômica da empresa.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-header-box">
+              <div class="step-number-badge">03</div>
+              <span class="step-verb">Auditar</span>
+            </div>
+            <h3 class="step-title">Blindagem &amp; Glosa</h3>
+            <p class="step-desc">
+              Glosa automática de créditos indevidos antes que virem autuação ou passivo fiscal. Blindagem ativa do caixa e compliance rigoroso.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-header-box">
+              <div class="step-number-badge">04</div>
+              <span class="step-verb">Entregar</span>
+            </div>
+            <h3 class="step-title">Relatórios Consultivos</h3>
+            <p class="step-desc">
+              Relatórios claros e consultivos, demonstrando detalhadamente cada centavo recuperável e risco bloqueado com fundamentação jurídica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rodapé da Metodologia: Monitoramento Regulatório Contínuo -->
+        <div class="regulatory-banner">
+          <div class="regulatory-header">
+            <h3 class="regulatory-title">
+              <i data-lucide="radio" style="width: 22px; height: 22px;"></i>
+              Monitoramento Regulatório Contínuo
+            </h3>
+            <p class="regulatory-desc">
+              Para garantir precisão absoluta, a inteligência normativa da Pirapire monitora continuamente as publicações dos órgãos reguladores, refletindo automaticamente reduções, isenções ou alterações na apuração:
+            </p>
+          </div>
+
+          <div class="regulatory-tags">
+            <span class="reg-tag">Decretos</span>
+            <span class="reg-tag">Instruções Normativas (INs)</span>
+            <span class="reg-tag">Portarias</span>
+            <span class="reg-tag">Notas Técnicas</span>
+            <span class="reg-tag">Soluções de Consulta</span>
+            <span class="reg-tag">ADE / ADN</span>
+            <span class="reg-tag">Resoluções</span>
+            <span class="reg-tag">Convênios / Protocolos ICMS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         INTERACTIVE SIMULATOR (Simule seu Potencial de Recuperação)
+         ====================================================================== -->
+    <section class="section-padding simulator-section" id="simulador">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-gold">
+            <i data-lucide="calculator" style="width: 14px; height: 14px;"></i>
+            Calculadora de Impacto
+          </span>
+          <h2 class="section-title">Simule o Potencial de Recuperação do Seu Caixa</h2>
+          <p class="section-subtitle">
+            Ajuste o faturamento mensal médio e o regime tributário da sua empresa para estimar os valores passíveis de recuperação na janela dos últimos 60 meses:
+          </p>
+        </div>
+
+        <div class="simulator-container">
+          <!-- Controls -->
+          <div class="simulator-controls">
+            <div class="calc-group">
+              <label class="calc-label" for="revenue-slider">
+                <span>Faturamento Mensal Estimado</span>
+                <span class="calc-value-display" id="calc-revenue-val">R$ 2.500.000/mês</span>
+              </label>
+              <input type="range" class="range-slider" id="revenue-slider" min="200000" max="25000000" step="100000" value="2500000">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #9CA3AF; margin-top: 8px;">
+                <span>R$ 200 mil/mês</span>
+                <span>R$ 10 milhões/mês</span>
+                <span>R$ 25 milhões/mês</span>
+              </div>
+              
+              <!-- Quick Revenue Presets -->
+              <div class="quick-rev-wrapper">
+                <span class="quick-rev-label">Atalhos rápidos:</span>
+                <button type="button" class="quick-rev-btn" data-val="500000">R$ 500k/mês</button>
+                <button type="button" class="quick-rev-btn" data-val="1500000">R$ 1,5M/mês</button>
+                <button type="button" class="quick-rev-btn active" data-val="2500000">R$ 2,5M/mês</button>
+                <button type="button" class="quick-rev-btn" data-val="10000000">R$ 10M/mês</button>
+                <button type="button" class="quick-rev-btn" data-val="25000000">R$ 25M/mês</button>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label">
+                <span>Regime de Tributação</span>
+              </label>
+              <div class="regime-selector">
+                <button type="button" class="regime-btn active" data-regime="real">
+                  Lucro Real (Geral)
+                </button>
+                <button type="button" class="regime-btn" data-regime="presumido">
+                  Lucro Presumido
+                </button>
+              </div>
+            </div>
+
+            <div style="background-color: #F8F9FA; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="display: flex; gap: 10px; font-size: 0.8125rem; color: #4B5563;">
+                <i data-lucide="info" style="width: 18px; height: 18px; color: #006B3F; flex-shrink: 0;"></i>
+                <span id="calc-regime-note">Apuração integral imediata de PIS/COFINS e ICMS nos últimos 60 meses.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Box -->
+          <div class="simulator-results">
+            <div>
+              <div class="calc-result-header">Potencial de Recuperação Estimado (5 Anos)</div>
+              <div class="calc-large-number" id="calc-total-recoverable">
+                <span class="calc-currency">R$</span> 3.450.000
+              </div>
+              <p class="calc-note">Valores calculados com base na média histórica de créditos não aproveitados.</p>
+
+              <div class="calc-breakdown-list">
+                <div class="calc-breakdown-item">
+                  <span>Créditos PIS/COFINS (Insumos/Ativo):</span>
+                  <span class="calc-breakdown-val" id="calc-pis-cofins">R$ 2.175.000</span>
+                </div>
+                <div class="calc-breakdown-item">
+                  <span>Créditos ICMS &amp; Retenções na Fonte:</span>
+                  <span class="calc-breakdown-val" id="calc-icms-retencoes">R$ 1.275.000</span>
+                </div>
+                <div class="calc-breakdown-item">
+                  <span>Risco de Multas Evitadas (Glosa Ativa):</span>
+                  <span class="calc-breakdown-val" id="calc-glosa-preventiva" style="color: #FDB913;">R$ 1.425.000</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-cta btn-lg" style="width: 100%;" data-open-modal id="btn-calc-cta">
+                Auditar Minhas Notas Agora
+                <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+              </button>
+              <p style="font-size: 0.6875rem; color: rgba(255,255,255,0.7); text-align: center; margin-top: 10px;">
+                Sem custo inicial de implantação. Cobrança somente no êxito (Success Fee).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DOBRA 5: PARA QUEM É A PIRAPIRE? (Segmentos & Modelo de Negócio)
+         ====================================================================== -->
+    <section class="section-padding audience-section" id="segmentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i data-lucide="users" style="width: 14px; height: 14px;"></i>
+            Segmentos Atendidos
+          </span>
+          <h2 class="section-title">Para quem é a Pirapire?</h2>
+          <p class="section-subtitle">
+            Soluções sob medida para escritórios de contabilidade que desejam multiplicar receita e médias empresas que buscam eficiência máxima no caixa:
+          </p>
+        </div>
+
+        <div class="audience-grid">
+          <!-- Card 1: Escritórios Contábeis -->
+          <div class="audience-card">
+            <div class="audience-header">
+              <div class="audience-icon">
+                <i data-lucide="briefcase" style="width: 28px; height: 28px;"></i>
+              </div>
+              <div>
+                <span class="audience-badge">Público-Alvo 01</span>
+                <h3 class="audience-title">Escritórios Contábeis</h3>
+              </div>
+            </div>
+
+            <p class="audience-lead">
+              "Expansão da oferta de serviços e automação de auditorias."
+            </p>
+
+            <ul class="audience-checks">
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Relacionamento B2B Consultivo:</strong> Foco total em Partner Success com atendimento técnico de especialistas tributários.</span>
+              </li>
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Transparência Absoluta:</strong> Relatórios detalhados com fundamentação jurídica completa de cada crédito apurado.</span>
+              </li>
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Evolução para PaaS / White Label:</strong> Autonomia para auditar a carteira inteira de clientes sob sua própria marca na nuvem.</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-secondary btn-lg" style="width: 100%; margin-top: auto;" data-open-modal>
+              Ser Escritório Parceiro
+            </button>
+          </div>
+
+          <!-- Card 2: Média Empresa -->
+          <div class="audience-card">
+            <div class="audience-header">
+              <div class="audience-icon">
+                <i data-lucide="building-2" style="width: 28px; height: 28px;"></i>
+              </div>
+              <div>
+                <span class="audience-badge">Público-Alvo 02</span>
+                <h3 class="audience-title">Média Empresa</h3>
+              </div>
+            </div>
+
+            <p class="audience-lead">
+              "Foco em indústrias, supermercados, atacadistas e empresas com alto volume de notas fiscais."
+            </p>
+
+            <ul class="audience-checks">
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Processamento em Massa:</strong> Auditoria exaustiva de dezenas de milhares de XMLs dos últimos 60 meses em minutos.</span>
+              </li>
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Liquidez Direta de Caixa:</strong> Dinheiro retido ou pago a mais que volta diretamente para a conta corrente da empresa.</span>
+              </li>
+              <li class="audience-check-item">
+                <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                <span><strong>Blindagem contra Autuações:</strong> Glosa ativa antes do envio de obrigações acessórias, garantindo compliance absoluto.</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-cta btn-lg" style="width: 100%; margin-top: auto;" data-open-modal>
+              Solicitar Diagnóstico de Notas
+            </button>
+          </div>
+        </div>
+
+        <!-- Modelo de Precificação Transparente -->
+        <div class="pricing-banner">
+          <div class="pricing-header">
+            <span class="section-tag tag-gold">
+              <i data-lucide="coins" style="width: 14px; height: 14px;"></i>
+              Modelo de Precificação
+            </span>
+            <h3 class="pricing-title">Monetização Clara e Alinhada ao Seu Sucesso</h3>
+            <p class="pricing-subtitle">
+              Nossa remuneração é desenhada para eliminar barreiras de entrada e garantir risco zero na contratação:
+            </p>
+          </div>
+
+          <div class="pricing-models-grid">
+            <!-- Curto Prazo -->
+            <div class="pricing-model-card card-success-fee">
+              <span class="pricing-term-badge badge-curto">01. Curto Prazo</span>
+              <h4 class="pricing-model-title">Success Fee (Risco Zero)</h4>
+              <p class="pricing-model-desc">
+                Monetização puramente baseada no êxito financeiro. Só somos remunerados quando o crédito for efetivamente identificado, homologado e recuperado no caixa da sua empresa.
+              </p>
+              <div class="pricing-guarantee-note">
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                Sem créditos recuperados = Custo R$ 0,00 para você.
+              </div>
+            </div>
+
+            <!-- Longo Prazo -->
+            <div class="pricing-model-card card-saas">
+              <span class="pricing-term-badge badge-longo">02. Longo Prazo</span>
+              <h4 class="pricing-model-title">SaaS &amp; Intermediação (PaaS)</h4>
+              <p class="pricing-model-desc">
+                Mensalidade de software em nuvem (SaaS) aliada a uma taxa transparente de intermediação (take rate) pelos negócios fechados e pelo monitoramento contínuo em tempo real.
+              </p>
+              <div class="pricing-guarantee-note" style="color: #92400E;">
+                <i data-lucide="sliders-horizontal" style="width: 16px; height: 16px;"></i>
+                Previsibilidade de custo operacional e escala contínua.
+              </div>
+            </div>
+          </div>
+
+          <!-- PoC Guiada Callout (Do Documento Oficial) -->
+          <div class="poc-callout">
+            <div class="poc-callout-text">
+              <h4>Inicie uma Prova de Conceito (PoC) Fechada e Guiada</h4>
+              <p>
+                Valide a precisão e a eficiência da plataforma Pirapire diretamente no banco de notas fiscais da sua empresa ou clientes contábeis, com acompanhamento de especialistas.
+              </p>
+            </div>
+            <button class="btn btn-cta" data-open-modal style="flex-shrink: 0;">
+              Solicitar PoC Guiada
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       MODAL DE CONVERSÃO / DIAGNÓSTICO & POC
+       ======================================================================== -->
+  <div class="modal-overlay" id="lead-modal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Fechar janela">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="section-tag" style="margin-bottom: 8px;">
+          <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+          Diagnóstico Sem Custo Inicial
+        </div>
+        <h3 class="modal-title">Descubra quanto você tem a recuperar</h3>
+        <p class="modal-subtitle">
+          Preencha os dados abaixo para iniciar sua Prova de Conceito (PoC) guiada e receber uma estimativa personalizada com base nos seus arquivos fiscais.
+        </p>
+      </div>
+
+      <form id="lead-poc-form">
+        <div class="form-group">
+          <label class="form-label" for="lead-name">Nome Completo</label>
+          <input type="text" id="lead-name" class="form-input" placeholder="Ex: Rodrigo Mendonça" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="lead-company">Empresa / Escritório</label>
+            <input type="text" id="lead-company" class="form-input" placeholder="Razão Social ou Fantasia" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lead-segment">Segmento</label>
+            <select id="lead-segment" class="form-select" required>
+              <option value="empresa">Média Empresa (Indústria/Varejo)</option>
+              <option value="contabil">Escritório Contábil (Parceria)</option>
+              <option value="outro">Outro Modelo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="lead-email">E-mail Corporativo</label>
+            <input type="email" id="lead-email" class="form-input" placeholder="nome@empresa.com.br" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lead-phone">WhatsApp / Telefone</label>
+            <input type="tel" id="lead-phone" class="form-input" placeholder="(11) 99999-9999" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modal-regime">Regime Tributário Atual</label>
+          <select id="modal-regime" class="form-select" required>
+            <option value="real">Lucro Real (Recuperação Integral Imediata)</option>
+            <option value="presumido">Lucro Presumido (Retenções &amp; Preparação 2027)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-cta btn-lg" style="width: 100%; margin-top: 8px;">
+          Solicitar Auditoria &amp; Diagnóstico Gratuito
+          <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+        </button>
+
+        <p class="form-privacy-note">
+          <i data-lucide="lock" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i>
+          Seus dados estão protegidos sob sigilo fiscal e em total conformidade com a LGPD.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <i data-lucide="check-circle" style="width: 22px; height: 22px; color: #FFFFFF;"></i>
+    <span class="toast-message">Solicitação enviada com sucesso!</span>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER CORPORATIVO
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo-text">
+            Pirapire<span>.</span>
+          </div>
+          <p class="footer-brand-desc">
+            TaxTech de inteligência fiscal contínua, auditoria automatizada de XMLs e recuperação ágil de créditos tributários para médias empresas e escritórios contábeis.
+          </p>
+          <div class="footer-origin-note">
+            <i data-lucide="sparkle" style="width: 14px; height: 14px;"></i>
+            <span><strong>Pirapire:</strong> "dinheiro / moeda" em língua Guarani.</span>
+          </div>
+        </div>
+
+        <!-- Links: Soluções -->
+        <div>
+          <h4 class="footer-col-title">Soluções</h4>
+          <ul class="footer-links-list">
+            <li><a href="#escopo" class="footer-link">Auditoria de Insumos</a></li>
+            <li><a href="#escopo" class="footer-link">Ativo Imobilizado (CIAP)</a></li>
+            <li><a href="#escopo" class="footer-link">Retenções na Fonte</a></li>
+            <li><a href="#escopo" class="footer-link">NF-e de Mercadoria</a></li>
+            <li><a href="#escopo" class="footer-link">NFS-e de Serviço</a></li>
+          </ul>
+        </div>
+
+        <!-- Links: Metodologia & Risco -->
+        <div>
+          <h4 class="footer-col-title">Segurança &amp; Risco</h4>
+          <ul class="footer-links-list">
+            <li><a href="#matriz-risco" class="footer-link">Matriz de Risco</a></li>
+            <li><a href="#metodologia" class="footer-link">Blindagem Ativa</a></li>
+            <li><a href="#metodologia" class="footer-link">Monitoramento Regulatório</a></li>
+            <li><a href="#escopo" class="footer-link">Preparação Reforma 2027</a></li>
+            <li><a href="#segmentos" class="footer-link">Modelo Success Fee</a></li>
+          </ul>
+        </div>
+
+        <!-- Links: Contato & Parcerias -->
+        <div>
+          <h4 class="footer-col-title">Parcerias</h4>
+          <ul class="footer-links-list">
+            <li><a href="#segmentos" class="footer-link">Escritórios Contábeis</a></li>
+            <li><a href="#segmentos" class="footer-link">PaaS White Label</a></li>
+            <li><a href="#simulador" class="footer-link">Simulador de Caixa</a></li>
+            <li><a href="#segmentos" class="footer-link" data-open-modal>Agendar PoC Guiada</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Pirapire TaxTech S.A. Todos os direitos reservados.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <span>Auditoria 100% em Conformidade com a RFB</span>
+          <span>Segurança de Dados e LGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/simulator.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
