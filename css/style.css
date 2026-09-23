@@ -191,7 +191,7 @@
   position: relative;
   background-color: var(--bg-main);
   padding-top: 56px;
-  padding-bottom: 96px;
+  padding-bottom: 80px;
   overflow: hidden;
 }
 
@@ -271,7 +271,7 @@
   font-size: 1.1875rem;
   line-height: 1.65;
   color: var(--text-body);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   max-width: 580px;
 }
 
@@ -378,161 +378,6 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-muted);
-}
-
-/* Quick Revenue Selectors in Simulator */
-.quick-rev-wrapper {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.quick-rev-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  margin-right: 4px;
-}
-
-.quick-rev-btn {
-  background: #FFFFFF;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-full);
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-body);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.quick-rev-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background-color: var(--color-primary-surface);
-}
-
-.quick-rev-btn.active {
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
-}
-
-/* Comparison Contrast Table: Tradicional vs Pirapire */
-.comparison-section {
-  margin-top: 48px;
-}
-
-.comparison-card {
-  background: #FFFFFF;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.comparison-table th {
-  padding: 20px 24px;
-  font-family: var(--font-heading);
-  font-size: 0.9375rem;
-  font-weight: 800;
-  border-bottom: 2px solid var(--border-subtle);
-}
-
-.comparison-table th.col-feature {
-  width: 34%;
-  color: var(--text-muted);
-}
-
-.comparison-table th.col-traditional {
-  width: 33%;
-  background-color: #FEF2F2;
-  color: #B91C1C;
-  border-bottom-color: rgba(239, 68, 68, 0.2);
-}
-
-.comparison-table th.col-pirapire {
-  width: 33%;
-  background-color: #E8F5EE;
-  color: #006B3F;
-  border-bottom-color: rgba(0, 107, 63, 0.2);
-}
-
-.comparison-table td {
-  padding: 16px 24px;
-  font-size: 0.875rem;
-  border-bottom: 1px solid var(--border-subtle);
-  vertical-align: middle;
-}
-
-.comparison-table td.col-traditional {
-  background-color: rgba(254, 242, 242, 0.4);
-  color: #7F1D1D;
-  font-weight: 500;
-}
-
-.comparison-table td.col-pirapire {
-  background-color: rgba(232, 245, 238, 0.4);
-  color: #004D2D;
-  font-weight: 700;
-}
-
-/* Regime Interactive Tabs */
-.regime-tabs-nav {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.regime-tab-button {
-  padding: 12px 28px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 800;
-  border: 2px solid var(--border-strong);
-  background: #FFFFFF;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.regime-tab-button:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.regime-tab-button.active {
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
-  box-shadow: 0 6px 16px rgba(0, 107, 63, 0.25);
-}
-
-.regime-tab-pane {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.regime-tab-pane.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero Visual: Interactive Audit Card */
@@ -822,6 +667,71 @@
   border-left: 3px solid #EF4444;
 }
 
+/* Comparison Contrast Table: Tradicional vs Pirapire */
+.comparison-section {
+  margin-top: 48px;
+}
+
+.comparison-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th {
+  padding: 20px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+.comparison-table th.col-feature {
+  width: 34%;
+  color: var(--text-muted);
+}
+
+.comparison-table th.col-traditional {
+  width: 33%;
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-bottom-color: rgba(239, 68, 68, 0.2);
+}
+
+.comparison-table th.col-pirapire {
+  width: 33%;
+  background-color: #E8F5EE;
+  color: #006B3F;
+  border-bottom-color: rgba(0, 107, 63, 0.2);
+}
+
+.comparison-table td {
+  padding: 16px 24px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.comparison-table td.col-traditional {
+  background-color: rgba(254, 242, 242, 0.4);
+  color: #7F1D1D;
+  font-weight: 500;
+}
+
+.comparison-table td.col-pirapire {
+  background-color: rgba(232, 245, 238, 0.4);
+  color: #004D2D;
+  font-weight: 700;
+}
+
 /* Callout Box Custo da Inação */
 .inaction-banner {
   background: #FFFFFF;
@@ -976,10 +886,54 @@
   color: var(--text-muted);
 }
 
-.regime-cards-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+/* Regime Interactive Tabs */
+.regime-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.regime-tab-button {
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  border: 2px solid var(--border-strong);
+  background: #FFFFFF;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.regime-tab-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.regime-tab-button.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(0, 107, 63, 0.25);
+}
+
+.regime-tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.regime-tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .regime-card {
@@ -1320,6 +1274,46 @@
 
 .range-slider::-webkit-slider-thumb:hover {
   transform: scale(1.15);
+}
+
+/* Quick Revenue Selectors in Simulator */
+.quick-rev-wrapper {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-rev-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.quick-rev-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quick-rev-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-surface);
+}
+
+.quick-rev-btn.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
 }
 
 .regime-selector {
@@ -1735,6 +1729,32 @@
   box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
+.form-input.is-invalid, .form-select.is-invalid {
+  border-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.form-field-hint {
+  font-size: 0.75rem;
+  color: #DC2626;
+  margin-top: 4px;
+  display: none;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.form-field-hint.active {
+  display: block;
+}
+
+.char-counter {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  float: right;
+  font-weight: 500;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1871,6 +1891,10 @@
     gap: 48px;
   }
   
+  .trust-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .risk-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1902,23 +1926,32 @@
     display: none;
   }
   
+  .header-compliance-badge {
+    display: none;
+  }
+
   .nav-toggle-btn {
     display: flex;
   }
   
+  .trust-strip-grid {
+    grid-template-columns: 1fr;
+  }
+
   .risk-grid {
     grid-template-columns: 1fr;
   }
   
+  .comparison-table th, .comparison-table td {
+    padding: 12px 14px;
+    font-size: 0.8125rem;
+  }
+
   .pillars-grid {
     grid-template-columns: 1fr;
   }
   
   .steps-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .regime-cards-container {
     grid-template-columns: 1fr;
   }
   

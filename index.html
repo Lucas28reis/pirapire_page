@@ -908,16 +908,24 @@
         </p>
       </div>
 
-      <form id="lead-poc-form">
+      <form id="lead-poc-form" novalidate>
         <div class="form-group">
-          <label class="form-label" for="lead-name">Nome Completo</label>
-          <input type="text" id="lead-name" class="form-input" placeholder="Ex: Rodrigo Mendonça" required>
+          <label class="form-label" for="lead-name">
+            Nome Completo
+            <span class="char-counter"><span id="name-count">0</span>/50</span>
+          </label>
+          <input type="text" id="lead-name" class="form-input" placeholder="Ex: Rodrigo Mendonça" maxlength="50" required>
+          <div class="form-field-hint" id="lead-name-hint">Por favor, informe seu nome completo (máximo 50 caracteres).</div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="lead-company">Empresa / Escritório</label>
-            <input type="text" id="lead-company" class="form-input" placeholder="Razão Social ou Fantasia" required>
+            <label class="form-label" for="lead-company">
+              Empresa / Escritório
+              <span class="char-counter"><span id="company-count">0</span>/50</span>
+            </label>
+            <input type="text" id="lead-company" class="form-input" placeholder="Razão Social ou Fantasia" maxlength="50" required>
+            <div class="form-field-hint" id="lead-company-hint">Por favor, informe a empresa ou escritório (máximo 50 caracteres).</div>
           </div>
           <div class="form-group">
             <label class="form-label" for="lead-segment">Segmento</label>
@@ -931,12 +939,20 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="lead-email">E-mail Corporativo</label>
-            <input type="email" id="lead-email" class="form-input" placeholder="nome@empresa.com.br" required>
+            <label class="form-label" for="lead-email">
+              E-mail Corporativo
+              <span class="char-counter"><span id="email-count">0</span>/50</span>
+            </label>
+            <input type="email" id="lead-email" class="form-input" placeholder="contato@empresa.com.br" maxlength="50" autocomplete="email" required>
+            <div class="form-field-hint" id="lead-email-hint">Insira um e-mail válido com @ e domínio (ex: nome@empresa.com ou .com.br).</div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="lead-phone">WhatsApp / Telefone</label>
-            <input type="tel" id="lead-phone" class="form-input" placeholder="(11) 99999-9999" required>
+            <label class="form-label" for="lead-phone">
+              WhatsApp / Telefone
+              <span class="char-counter"><span id="phone-count">0</span>/15</span>
+            </label>
+            <input type="tel" id="lead-phone" class="form-input" placeholder="(11) 99999-9999" maxlength="15" inputmode="numeric" required>
+            <div class="form-field-hint" id="lead-phone-hint">Insira um número com DDD no formato (11) 99999-9999.</div>
           </div>
         </div>
 

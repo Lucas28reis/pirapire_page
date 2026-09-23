@@ -91,9 +91,138 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Phone Mask & Real-time Sanitization ---
+  const phoneInput = document.getElementById('lead-phone');
+  const nameInput = document.getElementById('lead-name');
+  const companyInput = document.getElementById('lead-company');
+  const emailInput = document.getElementById('lead-email');
+
+  function maskPhone(value) {
+    let digits = value.replace(/\D/g, '').slice(0, 11);
+    if (!digits) return '';
+    if (digits.length <= 2) {
+      return `(${digits}`;
+    }
+    if (digits.length <= 6) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    }
+    if (digits.length <= 10) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    }
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+  }
+
+  phoneInput?.addEventListener('input', (e) => {
+    e.target.value = maskPhone(e.target.value);
+    updateCharCount('phone-count', e.target.value.length);
+    clearFieldError(phoneInput, 'lead-phone-hint');
+  });
+
+  phoneInput?.addEventListener('keydown', (e) => {
+    const allowed = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter'];
+    if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+    if (!/[0-9]/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  function updateCharCount(counterId, count) {
+    const el = document.getElementById(counterId);
+    if (el) el.textContent = count;
+  }
+
+  function setFieldError(input, hintId, msg = '') {
+    if (!input) return;
+    input.classList.add('is-invalid');
+    const hint = document.getElementById(hintId);
+    if (hint) {
+      if (msg) hint.textContent = msg;
+      hint.classList.add('active');
+    }
+  }
+
+  function clearFieldError(input, hintId) {
+    if (!input) return;
+    input.classList.remove('is-invalid');
+    const hint = document.getElementById(hintId);
+    if (hint) hint.classList.remove('active');
+  }
+
+  function isValidEmail(email) {
+    if (!email || email.length > 50) return false;
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+
+  nameInput?.addEventListener('input', (e) => {
+    updateCharCount('name-count', e.target.value.length);
+    if (e.target.value.trim().length >= 3) {
+      clearFieldError(nameInput, 'lead-name-hint');
+    }
+  });
+
+  companyInput?.addEventListener('input', (e) => {
+    updateCharCount('company-count', e.target.value.length);
+    if (e.target.value.trim().length >= 2) {
+      clearFieldError(companyInput, 'lead-company-hint');
+    }
+  });
+
+  emailInput?.addEventListener('input', (e) => {
+    updateCharCount('email-count', e.target.value.length);
+    if (isValidEmail(e.target.value.trim())) {
+      clearFieldError(emailInput, 'lead-email-hint');
+    }
+  });
+
   // --- Lead Form Submission Simulation ---
   leadForm?.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    let hasError = false;
+
+    // Validate Name (max 50, min 3)
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+    if (!nameVal || nameVal.length < 3 || nameVal.length > 50) {
+      setFieldError(nameInput, 'lead-name-hint', 'Nome completo obrigatório (3 a 50 caracteres).');
+      if (!hasError) nameInput?.focus();
+      hasError = true;
+    } else {
+      clearFieldError(nameInput, 'lead-name-hint');
+    }
+
+    // Validate Company (max 50, min 2)
+    const companyVal = companyInput ? companyInput.value.trim() : '';
+    if (!companyVal || companyVal.length < 2 || companyVal.length > 50) {
+      setFieldError(companyInput, 'lead-company-hint', 'Informe a empresa ou escritório (máximo 50 caracteres).');
+      if (!hasError) companyInput?.focus();
+      hasError = true;
+    } else {
+      clearFieldError(companyInput, 'lead-company-hint');
+    }
+
+    // Validate Email (with @ and domain, max 50)
+    const emailVal = emailInput ? emailInput.value.trim() : '';
+    if (!isValidEmail(emailVal)) {
+      setFieldError(emailInput, 'lead-email-hint', 'E-mail corporativo inválido. Use o formato nome@empresa.com ou .com.br (máx 50 carac.).');
+      if (!hasError) emailInput?.focus();
+      hasError = true;
+    } else {
+      clearFieldError(emailInput, 'lead-email-hint');
+    }
+
+    // Validate Phone (10 or 11 digits, formatted (XX) XXXXX-XXXX)
+    const phoneDigits = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+      setFieldError(phoneInput, 'lead-phone-hint', 'Insira um telefone válido com DDD (ex: (11) 99999-9999).');
+      if (!hasError) phoneInput?.focus();
+      hasError = true;
+    } else {
+      clearFieldError(phoneInput, 'lead-phone-hint');
+    }
+
+    if (hasError) return;
+
     const submitBtn = leadForm.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -107,6 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.textContent = 'Solicitar Auditoria & Diagnóstico Gratuito';
       }
       leadForm.reset();
+      updateCharCount('name-count', 0);
+      updateCharCount('company-count', 0);
+      updateCharCount('email-count', 0);
+      updateCharCount('phone-count', 0);
       showToast('Solicitação recebida! Nossa equipe entrará em contato em menos de 15 minutos.');
     }, 900);
   });
