@@ -158,7 +158,7 @@ if "upload_success" not in st.session_state:
 if "is_simples_warning" not in st.session_state:
     st.session_state.is_simples_warning = False
 
-if st.sidebar.button("🚀 Ingerir e Auditar Documentos", type="primary", width="stretch"):
+if st.sidebar.button("🚀 Ingerir e Auditar Documentos", type="primary", use_container_width=True):
     if arquivos_xml:
         with st.spinner("Processando e auditando documento(s) fiscal(is)..."):
             time.sleep(2)  # Simula processamento
@@ -284,7 +284,7 @@ if st.session_state.upload_success:
             "Regra / Motivo Glosa": "Retenção Federal na Fonte (PIS/COFINS/CSLL/IRRF)",
         }
     ]
-    st.dataframe(pd.DataFrame(df_itens_data), width="stretch", hide_index=True)
+    st.dataframe(pd.DataFrame(df_itens_data), use_container_width=True, hide_index=True)
 
 
 # Abas do Dashboard
@@ -303,7 +303,7 @@ with tab_visao:
             "Crédito PIS/COFINS (R$)": [4500.00]
         })
         fig = px.bar(df_timeline, x="Mês/Ano", y="Crédito PIS/COFINS (R$)", title="Evolução de Créditos")
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("Faça o upload de um XML para visualizar o gráfico de evolução temporal.")
 
@@ -323,7 +323,7 @@ with tab_glosas:
                 "Crédito Permitido (R$)": 0.00,
             }
         ])
-        st.dataframe(df_glosas, width='stretch', hide_index=True)
+        st.dataframe(df_glosas, use_container_width=True, hide_index=True)
         
         st.info(
             "💡 **Critérios de Glosa Fiscal Aplicados:**\n\n"
