@@ -130,7 +130,7 @@ clientes_mock = {
 st.sidebar.markdown(
     """
     <div style='text-align: center; padding: 12px 0;'>
-        <h2 style='color: #38BDF8; margin: 0;'>🛡️ Pirapire PaaS</h2>
+        <h2 style='color: #38BDF8; margin: 0;'>🛡️🦈 Pirapire PaaS</h2>
         <span style='color: #94A3B8; font-size: 0.85rem;'>Auditoria & Antivírus Fiscal</span>
     </div>
     """,
